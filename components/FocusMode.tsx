@@ -23,7 +23,7 @@ export const FocusMode: React.FC<FocusModeProps> = ({ isOpen, onClose, tasks, on
   }, [isOpen]);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    let interval: ReturnType<typeof setInterval>;
     if (isActive && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
